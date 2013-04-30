@@ -1,0 +1,90 @@
+<%-- Set the values of the themes configurable settings. --%>
+<%
+    //
+    // Page element displays
+    //
+    // Page header  - this will display in an H1 at the top of the display area
+    bundle.setProperty("bridgeRecordHeader", "People Records");
+    // Page subheader - this is displayed in a div tag and could be used for description
+    bundle.setProperty("bridgeRecordSubheader", "These are the people in the system.");
+    // The message to display is no records are found
+    bundle.setProperty("bridgeRecordNoResultsMessgage", "No Records Found");
+    
+
+    //
+    // Bridge Configuration
+    //
+    // **REQUIRED** This property is used for mapping the bridge model to the package
+    bundle.setProperty("bridgeRecordModel", "Test People");
+    // **REQUIRED** This property is used to declare the qualification
+    bundle.setProperty("bridgeRecordQualification", "All");
+    // **REQUIRED** This property is a list of the model attributes that will be  separated by commas
+    // The attributes will display in the same order as the list
+    bundle.setProperty("bridgeRecordAttributes", "Email, Last Name, First Name, Phone, User ID");
+    // **REQUIRED** This property sets the sort order for the results
+    // Each sort attribute requires either :ASC or :DESC
+    // At least 1 attribute must be specified
+    bundle.setProperty("bridgeRecordSort", "Email:DESC");
+    // This property sets the parameters designated in the bridge
+    // Comma separated list with Field:Value pairs
+    bundle.setProperty("bridgeRecordParameters", "");
+
+    //
+    // Display Configuration
+    //
+    // This property sets the display to a basic table or divs - parameter is: "table" or "div"
+    // CSS classes will be added to each element - the class name will be
+    // the same as the attribute with spaces removed
+    bundle.setProperty("bridgeRecordDisplay","table");
+    // These properties allow show inline or a dialog for details.
+    // Inline will toggle under the result
+    // If bridgeRecordDetailsType has a value, separate details will be available
+    // If it is blank none of the other properties are used
+    // This property uses either "Inline" or "Dialog"
+    bundle.setProperty("bridgeRecordDetailsType","Inline");
+    // This property requres a unique attribute and is used to tie
+    // the details to each result
+    bundle.setProperty("bridgeRecordUniqueAttribute","User ID");
+    // List of attributes that should be visible on the page
+    // This order needs to match the bridgeRecordAttributes order
+    bundle.setProperty("bridgeRecordShow","Email, Last Name, First Name");
+    // List of attributes that should be in the details
+    bundle.setProperty("bridgeRecordDetails","Email, Last Name, First Name, Phone, User ID");
+    // Title for the dialog if set to dialog
+    bundle.setProperty("bridgeRecordDetailsTitle","Details");
+    // The following property sets the text within the dialog close button
+    bundle.setProperty("bridgeRecordDialogClose","X");
+    // The following two properties set the item / text displayed at the front of the table row
+    // notifying the user that there is more information 
+    // The first will be used for both Inline and Dialog, the second is only used for Inline 
+    // and shows that the details is "open" and is used to "close" the details
+    // These items can be text or images - if using an image the full html image tag needs
+    // to be present
+    bundle.setProperty("bridgeRecordTableMore","+");
+    bundle.setProperty("bridgeRecordTableLess","-");
+    // This property value is the service item instance id that the bridge is exposed on
+    // and is dynamically set by the core application - this should not be changed 
+    bundle.setProperty("bridgeRecordKSRV", customerRequest.getTemplateId());
+
+    //
+    // CSS Designations
+    //
+    // Result table  = #bridgeRecord-results-table
+    // Result table cell = .attribute-name
+    //       - Each cell will have a css class that corresponds to the attribute name 
+    //       - with spaces replaces with dashes and capitalization removed
+    // Result div = .bridgeRecord-result
+    // Result attribute value = .attribute-name
+    //       - Each value is wrapped in a div will have a css class that corresponds  
+    //       - to the attribute name with spaces replaces with dashes and capitalization removed
+    // Details div = .bridgeRecord-details
+    //       - this div works for both table display and div display 
+    //       - this div wraps all detail attribute divs
+    // Attribute values in details = .attribute-name
+    //       - Each value is wrapped in a div will have a css class that corresponds  
+    //       - to the attribute name with spaces replaces with dashes and capitalization removed
+    // Button to close dialog = #close-dialog
+    // No Results Message div = .no-results
+
+
+%>

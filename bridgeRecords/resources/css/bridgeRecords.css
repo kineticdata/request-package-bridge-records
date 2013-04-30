@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+.bridgeRecord-subheader{
+    font-weight: bold; 
+    padding: 5px;
+	width: auto;
+}
+
+.no-results {
+    font-weight: bold;
+	padding: 20px;
+    font-size: 130%;
+}
+
+/* Basic Table Formatting */
+
+table {
+    border: 1px solid;
+}
+
+th {
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid;
+    background: #CCC;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid;
+}
+
+/* Div Formatting */
+
+.bridgeRecord-result {
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/* Dialog Formatting */
+
+#close-dialog {
+    float: right;
+}
+
